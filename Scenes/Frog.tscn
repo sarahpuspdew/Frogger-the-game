@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvs6jxg4v408c"]
+
+[ext_resource type="Texture2D" uid="uid://c1vxwncxno8fq" path="res://Assets/Sprite/FroggerIdle.png" id="1_r5nu3"]
+[ext_resource type="Script" path="res://Scripts/Frog.gd" id="1_y3aef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cjg5"]
+size = Vector2(8, 8)
+
+[node name="Frog" type="Area2D"]
+script = ExtResource("1_y3aef")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r5nu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_2cjg5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

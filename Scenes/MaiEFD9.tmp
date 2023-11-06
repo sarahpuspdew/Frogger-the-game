@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c34y0438xqk47"]
+
+[ext_resource type="PackedScene" uid="uid://twnch14s1grn" path="res://Scenes/Background.tscn" id="1_n4wed"]
+[ext_resource type="PackedScene" uid="uid://rgeltu621vji" path="res://Scenes/HUD.tscn" id="1_tggku"]
+[ext_resource type="PackedScene" uid="uid://bvs6jxg4v408c" path="res://Scenes/Frog.tscn" id="3_f2251"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_n4wed")]
+
+[node name="HUD" parent="." instance=ExtResource("1_tggku")]
+
+[node name="Frog" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("3_f2251")]
+position = Vector2(184, 472)
+tilemap = NodePath("../Background")
