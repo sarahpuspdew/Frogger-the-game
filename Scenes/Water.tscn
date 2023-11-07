@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6vob5nrl82fo"]
+
+[ext_resource type="Script" path="res://Scripts/Water.gd" id="1_xuu6m"]
+
+[node name="Water" type="Area2D"]
+script = ExtResource("1_xuu6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

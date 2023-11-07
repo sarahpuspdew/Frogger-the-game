@@ -1,16 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://c34y0438xqk47"]
+[gd_scene load_steps=11 format=3 uid="uid://c34y0438xqk47"]
 
 [ext_resource type="PackedScene" uid="uid://twnch14s1grn" path="res://Scenes/Background.tscn" id="1_n4wed"]
 [ext_resource type="PackedScene" uid="uid://rgeltu621vji" path="res://Scenes/HUD.tscn" id="1_tggku"]
 [ext_resource type="PackedScene" uid="uid://bvs6jxg4v408c" path="res://Scenes/Frog.tscn" id="3_f2251"]
 [ext_resource type="Script" path="res://Scripts/Boundary.gd" id="4_hlr8j"]
 [ext_resource type="PackedScene" uid="uid://ck73xj7m10cwl" path="res://Scenes/Home.tscn" id="5_akqci"]
+[ext_resource type="PackedScene" uid="uid://b6vob5nrl82fo" path="res://Scenes/Water.tscn" id="6_u1l2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgub0"]
 size = Vector2(8, 512)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3s311"]
 size = Vector2(448, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv1p3"]
+size = Vector2(448, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtji0"]
+size = Vector2(448, 80)
 
 [node name="Main" type="Node2D"]
 
@@ -71,3 +78,18 @@ scale = Vector2(1.5, 1.5)
 [node name="Frog" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("3_f2251")]
 position = Vector2(184, 472)
 tilemap = NodePath("../Background")
+
+[node name="Water" parent="." instance=ExtResource("6_u1l2c")]
+position = Vector2(224, 328)
+
+[node name="CollisionShape2D" parent="Water" index="0"]
+shape = SubResource("RectangleShape2D_cv1p3")
+
+[node name="Water2" parent="." instance=ExtResource("6_u1l2c")]
+position = Vector2(224, 136)
+
+[node name="CollisionShape2D" parent="Water2" index="0"]
+shape = SubResource("RectangleShape2D_xtji0")
+
+[editable path="Water"]
+[editable path="Water2"]

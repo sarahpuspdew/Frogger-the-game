@@ -7,8 +7,8 @@ var current_tile : Vector2i
 var target_tile : Vector2i
 
 
-func _physics_process(delta):
-	pass
+func _ready():
+	GameManager.life_lost.connect(_on_life_lost)
 
 
 func _input(event):
@@ -31,3 +31,7 @@ func move(direction : Vector2):
 	
 	# move player
 	global_position = tilemap.map_to_local(target_tile)
+
+
+func _on_life_lost():
+	print("lost life")
